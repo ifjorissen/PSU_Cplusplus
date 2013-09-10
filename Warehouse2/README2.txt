@@ -1,0 +1,12 @@
+README.TXT
+
+Isabella Jorissen 
+CS 162
+
+Program description and Algorithm:
+Program 4
+
+This program has a user and the software acts as the manager. At the beginning, the external file is read and all  of the products are read in as added to the stockhouse, which holds all of the possible products a warehouse can buy at cost. The user is the owner of the warehouse, and unless they are performing an action, are able to choose to do any one of the options at any time. The warehouse has 4 main actions at any time, and holds up to 20 products by default. This means that the owner can always check their finances and stock, add stock, create a custom product, and sell a product. When they stock thier warehouse, they can print the contents of the stockhouse.  If they choose to purchase something from the stockhouse, the information from the item in the stockhouse gets copied into the user's warehouse and the stockhouse remains the same.  When the user creates a custom product the product is first written in to the external data file and then the user has the opportunity to purchase it next time the are presented with options.  This allows the to customize (add to) the stockhouse. When the user chooses one of the actions the corresponding function is called and prompts the user for the relvant information.  When they are done perfoming the action, they can view their options again if they like.
+
+
+The warehouse and stockhouse classes perform the bulk of the work in this program.  Both classes use a dynamically allocated list of product structs in order to keep track of what is in stock.  The product struct contains 5 members, price, cost, vendor, name, and quantity. The product members name and vendor are both dynamically allocated character arrays. The stockhouse has an infinite quantity of all product (it will always stay at 10000) and serves as the place for the warehouse to buy from.  By default, the warehouse and stockhouse can only hold a finite number of products, as indicated by wh_ptr_size and sh_ptr_size.  However, there is a method available to both classes to expand those dynamic arrays by copying the information to a temporary place, deallocating the memory pointed at by the original pointer, and then making the pointer point to the new expanded array.
